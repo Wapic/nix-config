@@ -24,6 +24,17 @@
                     ./laptop/configuration.nix
                 ];
             };
+
+            WpcDesktop = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = { 
+                    inherit nix-colors;
+                    inherit home-manager;
+                };
+                modules = [
+                    ./desktop/configuration.nix
+                ];
+            };
         };
     };
 }

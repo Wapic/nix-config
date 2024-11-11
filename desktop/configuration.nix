@@ -1,9 +1,8 @@
-{ config, lib, home-manager, nixos-hardware, nix-colors, pkgs, ... }: {
+{ config, lib, home-manager, nix-colors, pkgs, ... }: {
 
     imports = [
         ./hardware-configuration.nix
         ../modules/nix-modules
-        nixos-hardware.nixosModules.framework-13-7040-amd
         home-manager.nixosModules.home-manager
     ];
 
@@ -25,7 +24,7 @@
     };
 
     system = {
-        stateVersion = "24.05"; # Did you read the comment?
+        stateVersion = "24.05";
 
         autoUpgrade = {
             enable = true;

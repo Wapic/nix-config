@@ -33,7 +33,7 @@
                 sudo = "sudo ";
                 cp = "cp -i";
                 ls = "ls --group-directories-first -X --color=always";
-                update = "sudo nixos-rebuild switch";
+                update = "sudo nixos-rebuild switch --flake /home/wapic/nix-config";
                 ssh = "kitten ssh ";
                 find = "fzf --preview='/home/wapic/scripts/fzf-preview.sh {}'";
                 yt-dl = "/home/wapic/scripts/yt-dl.py";

@@ -13,6 +13,7 @@
         osu.enable = false;
         spotify.enable = true;
         obs.enable = false;
+        brightnessctl.enable = true;
 
         waybar.settings.mainbar.modules-right = [
             "custom/left-arrow-dark"

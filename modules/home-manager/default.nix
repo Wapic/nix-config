@@ -31,6 +31,7 @@
         ./apps/obs.nix 
         ./apps/yt-dl.nix
         ./apps/imv.nix
+        ./apps/mpv.nix
     ];
 
     home.packages = with pkgs; [

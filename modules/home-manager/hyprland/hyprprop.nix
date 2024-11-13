@@ -4,6 +4,10 @@
         slurp
     ];
 
+    programs.zsh.shellAliases = {
+        hyprprop = "/home/wapic/scripts/hyprprop.sh";
+    };
+
     home.file.hyprprop = {
         enable = true;
         target = "scripts/hyprprop.sh";

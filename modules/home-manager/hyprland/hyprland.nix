@@ -19,6 +19,10 @@
 
             env = [
                 "NIXOS_OZONE_WL,1"
+                "SDL_VIDEODRIVER,wayland,x11,xcb"
+                "QT_QPA_PLATFORM,wayland;xcb"
+                "CLUTTER_BACKEND,wayland"
+                "GDK_BACKEND,wayland,x11,*"
             ];
 
             monitor = [
@@ -120,20 +124,11 @@
                 "$mod SHIFT, Return, exec, $terminal_floating"
                 "$mod, Return, exec, $terminal"
                 "$mod, D, exec, $menu"
-                "$mod SHIFT, D, exec, ~/scripts/wofi-calc.sh"
 
                 # Multimedia
                 ",XF86AudioPrev, exec, playerctl --ignore-player=firefox previous"
                 ",XF86AudioPlay, exec, playerctl --ignore-player=firefox play-pause"
                 ",XF86AudioNext, exec, playerctl --ignore-player=firefox next"
-                ",XF86AudioLowerVolume, exec, ~/scripts/volumeControl.sh 5%-"
-                ",XF86AudioRaiseVolume, exec, ~/scripts/volumeControl.sh 5%+"
-                ",XF86AudioMute, exec, ~/scripts/volumeControl.sh mute"
-                ",XF86AudioMicMute, exec, pactl -- -set-source-mute 0 toggle"
-
-                # Brightness
-                ",XF86MonBrightnessDown, exec, ~/scripts/brightnessControl.sh 5%-"
-                ",XF86MonBrightnessUp, exec, ~/scripts/brightnessControl.sh 5%+"
 
                 # Screenshots
                 ", Print, exec, slurp -or | grim -g - - | wl-copy"

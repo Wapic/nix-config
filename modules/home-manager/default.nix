@@ -7,14 +7,18 @@
         ./hyprland/hypridle.nix
         ./hyprland/hyprpaper.nix
         ./hyprland/xdg.nix
+        ./hyprland/hyprprop.nix
         ./desktop/dunst.nix
         ./desktop/wofi.nix
         ./desktop/waybar.nix
+        ./desktop/brightnessctl.nix
+        ./desktop/volumecontrol.nix
         ./terminal/ssh-agent.nix
         ./terminal/shell.nix
         ./terminal/kitty.nix
         ./terminal/neovim.nix
         ./terminal/git.nix
+        ./terminal/fzf.nix
         ./apps/pavucontrol.nix
         ./apps/mozilla.nix
         ./apps/nautilus.nix
@@ -25,6 +29,7 @@
         ./apps/stremio.nix
         ./apps/vesktop.nix
         ./apps/obs.nix 
+        ./apps/yt-dl.nix
     ];
 
     home.packages = with pkgs; [

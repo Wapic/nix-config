@@ -5,20 +5,13 @@
         unzip
         wget
         wl-clipboard
-        brightnessctl
     ];
 
     programs = {
         imv.enable = true;
         jq.enable = true;
-        bat.enable = true;
         fastfetch.enable = true;
         btop.enable = true;
-
-        fzf = {
-            enable = true;
-            enableZshIntegration = true;
-        };
 
         zsh = {
             enable = true;
@@ -35,8 +28,6 @@
                 ls = "ls --group-directories-first -X --color=always";
                 update = "sudo nixos-rebuild switch --flake /home/wapic/nix-config";
                 ssh = "kitten ssh ";
-                find = "fzf --preview='/home/wapic/scripts/fzf-preview.sh {}'";
-                yt-dl = "/home/wapic/scripts/yt-dl.py";
                 wpc = "cd /home/wapic/.local/share/PrismLauncher/instances/SKYBLOCK_OLD/minecraft/config/ChatTriggers/modules/";
             };
 

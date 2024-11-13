@@ -48,8 +48,8 @@
                 interval = 30;
                 interface = "wlan0";
                 format = "󱛄";
-                format-wifi = "{icon} {frequency}";
-                format-disconnected = "󰤮 ";
+                format-wifi = "{icon}  {frequency}";
+                format-disconnected = "󰤮";
                 format-icons = [
                     "󰤯"
                     "󰤟"

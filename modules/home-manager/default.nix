@@ -24,9 +24,9 @@
         ./apps/spotify.nix
         ./apps/stremio.nix
         ./apps/vesktop.nix
+        ./apps/obs.nix 
     ];
 
-    
     home.packages = with pkgs; [
         python3
         nodePackages.nodejs

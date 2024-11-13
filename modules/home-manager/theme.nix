@@ -9,22 +9,22 @@
         name = "wapic";
         author = "wapic";
         palette = {
-            base00 = "#000000";
-            base01 = "#FA5355";
-            base02 = "#3A9850";
-            base03 = "#BDB000";
-            base04 = "#4581EB";
-            base05 = "#FA54FF";
-            base06 = "#33C2C1";
-            base07 = "#1A1A1A";
-            base08 = "#1F2329";
-            base09 = "#FB7172";
-            base0A = "#67FF4F";
-            base0B = "#FFFF00";
-            base0C = "#6D9DF1";
-            base0D = "#FV82FF";
-            base0E = "#60D3D1";
-            base0F = "#A0A8B7";
+            base00 = "12151a"; #Background-Darker
+            base01 = "1c2128"; #Background
+            base02 = "373e47"; #Background-Bright
+            base03 = "545d68"; 
+            base04 = "768390";
+            base05 = "909dab";
+            base06 = "bdb000"; # yellow
+            base07 = "39cfe6"; # cyan
+            base08 = "f47067"; # red
+            base09 = "e0823d"; # orange
+            base0A = "c69026"; # gold?
+            base0B = "57ab5a"; # Green
+            base0C = "96d0ff"; # light blue
+            base0D = "539bf5"; # blue
+            base0E = "e275ad"; # pink
+            base0F = "adbac7"; # Foreground
         };
     };
 
@@ -69,9 +69,9 @@
     wayland.windowManager.hyprland.settings = {
         env = [ "XCURSOR_SIZE,30" ];
         exec-once = [ "hyprctl setcursor Adwaita 30" ];
-        general."col.active_border" = "0xff${config.colorScheme.palette.base06}";
-        general."col.inactive_border" = "0xff${config.colorScheme.palette.base07}";
-        decoration."col.shadow" = "0xff${config.colorScheme.palette.base00}";
+        general."col.active_border" = "0xff${config.colorScheme.palette.base0D}";
+        general."col.inactive_border" = "0xff${config.colorScheme.palette.base01}";
+        decoration."col.shadow" = "0xff${config.colorScheme.palette.base01}";
     };
 
     programs = {
@@ -79,30 +79,13 @@
             font.name = "Fira Code Nerd Font Mono";
             font.size = 14;
             settings = {
-                background = "#${config.colorScheme.palette.base08}";
+                background = "#${config.colorScheme.palette.base01}";
                 foreground = "#${config.colorScheme.palette.base0F}";
 
                 selection_background = "#${config.colorScheme.palette.base0F}";
-                selection_foreground = "#${config.colorScheme.palette.base00}";
+                selection_foreground = "#${config.colorScheme.palette.base01}";
 
                 cursor = "#${config.colorScheme.palette.base0F}";
-
-                color0 = "#${config.colorScheme.palette.base00}";
-                color1 = "#${config.colorScheme.palette.base01}";
-                color2 = "#${config.colorScheme.palette.base02}";
-                color3 = "#${config.colorScheme.palette.base03}";
-                color4 = "#${config.colorScheme.palette.base04}";
-                color5 = "#${config.colorScheme.palette.base05}";
-                color6 = "#${config.colorScheme.palette.base06}";
-                color7 = "#${config.colorScheme.palette.base07}";
-                color8 = "#${config.colorScheme.palette.base08}";
-                color9 = "#${config.colorScheme.palette.base09}";
-                color10 = "#${config.colorScheme.palette.base0A}";
-                color11 = "#${config.colorScheme.palette.base0B}";
-                color12 = "#${config.colorScheme.palette.base0C}";
-                color13 = "#${config.colorScheme.palette.base0D}";
-                color14 = "#${config.colorScheme.palette.base0E}";
-                color15 = "#${config.colorScheme.palette.base0F}";
             };
         };
 
@@ -114,16 +97,16 @@
 
             #custom-right-arrow-dark,
             #custom-left-arrow-dark {
-                color: #1a1a1a;
+                color: #${config.colorScheme.palette.base00};
             }
             #custom-right-arrow-light,
             #custom-left-arrow-light {
-                color: #${config.colorScheme.palette.base08};
-                background: #1a1a1a;
+                color: #${config.colorScheme.palette.base01};
+                background: #${config.colorScheme.palette.base00};
             }
 
             window#waybar {
-                background: #${config.colorScheme.palette.base08};
+                background: #${config.colorScheme.palette.base01};
                 color: #${config.colorScheme.palette.base0F};
             }
 
@@ -131,25 +114,19 @@
                 padding: 0 2px;
             }
             #workspaces button.active {
-                color: #${config.colorScheme.palette.base04};
+                color: #${config.colorScheme.palette.base0D};
             }
             #workspaces button:hover {
-                text-shadow: inherit;
-                box-shadow: inherit;
-                background: #101010;
-                border: #101010;
-                padding: 0 2px;
                 color: #${config.colorScheme.palette.base0C};
             }
-
             #pulseaudio {
-                color: #${config.colorScheme.palette.base04};
+                color: #${config.colorScheme.palette.base0D};
             }
             #battery {
-                color: #${config.colorScheme.palette.base02};
+                color: #${config.colorScheme.palette.base0B};
             }
             #bluetooth {
-                color: #${config.colorScheme.palette.base06};
+                color: #${config.colorScheme.palette.base07};
             }
 
             #network,
@@ -159,7 +136,7 @@
             #battery,
             #bluetooth,
             #tray {
-                background: #1a1a1a;
+                background: #${config.colorScheme.palette.base00};
             }
 
             #bluetooth,
@@ -173,13 +150,13 @@
 
         wofi.style = ''
             window {
-                border:     1px solid #${config.colorScheme.palette.base06};
-                background-color:   #${config.colorScheme.palette.base08};
+                border:     1px solid #${config.colorScheme.palette.base0D};
+                background-color:   #${config.colorScheme.palette.base01};
             }
 
             #input {
                 border: none;
-                background-color: #${config.colorScheme.palette.base07};
+                background-color: #${config.colorScheme.palette.base00};
                 color: #${config.colorScheme.palette.base0F};
                 margin: 2px 2px 0px;
                 outlne: none;
@@ -191,7 +168,7 @@
 
             #entry:selected {
                 outline: none;
-                background-color: #${config.colorScheme.palette.base07};
+                background-color: #${config.colorScheme.palette.base00};
                 margin: 0px 2px 0px 2px;
                 padding-left: 8px;
             }
@@ -214,11 +191,11 @@
             global = {
                 icon_theme = "Adwaita";
                 font = "Fira Code Nerd Font Regular 14";
-                frame_color = "#${config.colorScheme.palette.base06}";
+                frame_color = "#${config.colorScheme.palette.base0D}";
                 foreground = "#${config.colorScheme.palette.base0F}";
-                background = "#${config.colorScheme.palette.base08}";
+                background = "#${config.colorScheme.palette.base01}";
             };
-            urgency_critical.frame_color = "#${config.colorScheme.palette.base01}";
+            urgency_critical.frame_color = "#${config.colorScheme.palette.base08}";
         };
     };
 }

@@ -13,7 +13,6 @@
 
         settings = {
             exec-once = [
-                "nextcloud"
                 "waybar"
                 "lxqt-policykit-agent"
             ];

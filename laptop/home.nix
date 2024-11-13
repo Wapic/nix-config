@@ -11,7 +11,8 @@
 
     programs = {
         osu.enable = false;
-        spotify.enable = false;
+        spotify.enable = true;
+        obs.enable = false;
 
         waybar.settings.mainbar.modules-right = [
             "custom/left-arrow-dark"

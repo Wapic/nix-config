@@ -7,7 +7,9 @@
     home.stateVersion = "24.05";
 
     programs = {
-        spotify.enable = false;
+        osu.enable = true;
+        spotify.enable = true;
+        obs.enable = true;
     };
 
     services = {

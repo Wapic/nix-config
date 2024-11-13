@@ -21,8 +21,12 @@
         bluetooth.enable = true;
     };
     
-    home-manager.users.wapic = import ./home.nix;
-    home-manager.extraSpecialArgs = { inherit nix-colors; };
+    home-manager = {
+        users.wapic = import ./home.nix;
+        extraSpecialArgs = { inherit nix-colors; };
+        useGlobalPkgs = true;
+        useUserPackages = true;
+    };
 
     users.users.wapic = {
         shell = pkgs.zsh;

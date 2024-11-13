@@ -8,8 +8,6 @@
     ];
 
     programs = {
-        imv.enable = true;
-        jq.enable = true;
         fastfetch.enable = true;
         btop.enable = true;
 

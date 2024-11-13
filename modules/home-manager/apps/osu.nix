@@ -15,7 +15,7 @@
             osu = {
                 type = "Application";
                 name = "osu!";
-                Comment = "A free-to-win rhythm game.";
+                comment = "A free-to-win rhythm game.";
                 icon="osu-lazer";
                 exec = "osu-lazer %F";
                 terminal = false;
@@ -30,7 +30,6 @@
                 categories = [ "Game" ];
                 startupNotify = true;
                 startupWMClass = "osu!";
-                singleMainWindow = true;
             };
         };
     };

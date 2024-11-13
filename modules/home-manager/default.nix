@@ -30,6 +30,7 @@
         ./apps/vesktop.nix
         ./apps/obs.nix 
         ./apps/yt-dl.nix
+        ./apps/imv.nix
     ];
 
     home.packages = with pkgs; [

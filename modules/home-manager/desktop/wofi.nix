@@ -11,8 +11,8 @@
         };
     };
 
-    wayland.windowManager.hyprland = {
-        settings.bind = [ "$mod SHIFT, D, exec, ~/scripts/wofi-calc.sh" ];
+    wayland.windowManager.hyprland.settings = {
+        bind = [ "$mod SHIFT, D, exec, ~/scripts/wofi-calc.sh" ];
     };
 
     home.file.wofi-calc = {

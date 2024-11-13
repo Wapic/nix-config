@@ -196,6 +196,9 @@
                 "float, class:(electron)"
                 "size 50% 50%, class:(electron)"
 
+                "float, class:(imv)"
+                "size 50% 50%, class:(imv)"
+
                 "float, class:(org.pulseaudio.pavucontrol)"
                 "size 50% 50%, class:(org.pulseaudio.pavucontrol)"
 

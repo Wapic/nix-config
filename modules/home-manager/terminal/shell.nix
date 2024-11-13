@@ -13,7 +13,7 @@
 
         zsh = {
             enable = true;
-            defaultKeymap = "emacs";
+            syntaxHighlighting.enable = true;
 
             history = {
                 size = 10000;
@@ -29,11 +29,17 @@
                 wpc = "cd /home/wapic/.local/share/PrismLauncher/instances/SKYBLOCK_OLD/minecraft/config/ChatTriggers/modules/";
             };
 
+            plugins = [
+                {
+                    name = "vi-mode";
+                    src = pkgs.zsh-vi-mode;
+                    file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+                }
+            ];
+
             completionInit = "autoload -Uz compinit; compinit" + "\n" + "zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'";
 
             initExtra = ''
-                bindkey "^[[3~" delete-char
-
                 autoload -Uz add-zsh-hook
                 autoload -Uz vcs_info
                 add-zsh-hook precmd vcs_info

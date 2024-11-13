@@ -10,7 +10,12 @@
     };
 
     config = lib.mkIf config.communication.wifi.enable {
-        networking.wireless.iwd.enable = true;
+        networking.wireless.iwd = {
+            enable = true;
+            settings = {
+                Rank.BandModifier2_4GHz = 0.1;
+            };  
+        };
         environment.systemPackages = [ pkgs.iwgtk ];
     };
 }

@@ -32,6 +32,7 @@
         packages = with pkgs; [
             lavanda-gtk-theme
             adwaita-icon-theme
+            adwaita-qt
         ];
 
         pointerCursor = {
@@ -39,6 +40,13 @@
             package = pkgs.adwaita-icon-theme;
             name = "Adwaita";
             size = 30;
+        };
+    };
+
+    qt = {
+        enable = true;
+        style = {
+            name = "adwaita-dark";
         };
     };
 

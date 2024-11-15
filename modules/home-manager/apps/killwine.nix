@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }: {
     programs.zsh.shellAliases.killwine = "/home/wapic/scripts/killwine.sh";
 
-    home.file.yt-dl = {
+    home.file.killwine = {
         enable = true;
         executable = true;
         target = "scripts/killwine.sh";

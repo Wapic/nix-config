@@ -32,6 +32,8 @@
         ./apps/yt-dl.nix
         ./apps/imv.nix
         ./apps/mpv.nix
+        ./apps/killwine.nix
+        ./apps/imgur.nix
     ];
 
     home.packages = with pkgs; [

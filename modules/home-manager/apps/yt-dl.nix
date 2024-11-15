@@ -6,33 +6,32 @@
         };
     };
 
-    programs.zsh.shellAliases.yt-dl = "/home/wapic/scripts/yt-dl.py";
+    programs.zsh.shellAliases.yt-dl = "/home/wapic/scripts/yt-dl.sh";
 
     home.file.yt-dl = {
         enable = true;
         executable = true;
-        target = "scripts/yt-dl.py";
+        target = "scripts/yt-dl.sh";
         text = ''
-            #!/usr/bin/env python3
-            import subprocess
-            import sys
+            #!/usr/bin/env bash
 
-            def main():
-                if len(sys.argv) > 1:
-                    url, ff = sys.argv[1], sys.argv[2]
-                else:
-                    url, ff = input("enter url: "), input("file format: ")
+            url=$1
+            file_format=$2
+            args="-f mp4"
 
-                audioFormats = ("mp3", "m4a", "flac", "ogg", "wav", "aac")
+            if [[ -z "$1" ]]; then
+                read -rp "URL: " url
+            fi
 
-                cmd = ["yt-dlp", "-f", "mp4", url]
-                if ff in audioFormats:
-                    cmd.extend(["-x", "--audio-format", ff])
+            if [[ -z "$2" ]]; then
+                read -rp "File Format: " file_format
+            fi
 
-                subprocess.run(cmd)
+            if [[ "$file_format" != "mp4" ]]; then
+                args=$args"-x --audio-format $file_format"
+            fi
 
-            if __name__ == "__main__":
-                main()
+            yt-dlp "$args" "$url" 
         '';
     };
 }

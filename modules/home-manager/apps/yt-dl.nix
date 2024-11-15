@@ -2,7 +2,7 @@
     programs.yt-dlp = {
         enable = true;
         settings = {
-            output = "/home/wapic/yt-dl/%(title)s.%(ext)s";
+            output = "/home/wapic/Downloads/%(title)s.%(ext)s";
         };
     };
 

@@ -1,4 +1,8 @@
 { pkgs, lib, config, ... }: {
+    environment.systemPackages = with pkgs; [
+        ffmpeg
+    ];
+
     services.pipewire = {
         enable = true;
         pulse.enable = true;

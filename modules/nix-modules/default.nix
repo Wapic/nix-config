@@ -8,6 +8,7 @@
         ./networking.nix
         ./bluetooth.nix
         ./locale.nix
+        ./dev.nix
         ./system.nix
     ];
 

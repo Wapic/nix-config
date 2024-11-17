@@ -34,6 +34,7 @@
         ./apps/mpv.nix
         ./apps/killwine.nix
         ./apps/imgur.nix
+        ./apps/tetrio.nix
     ];
 
     home.packages = with pkgs; [

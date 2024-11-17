@@ -10,7 +10,7 @@
     hardware.framework.colorfile = "~/scripts/BOE_CQ_______NE135FBM_N41_03.icm";
 
     programs = {
-        osu.enable = true;
+        osu.enable = false;
         spotify.enable = true;
         obs.enable = false;
         brightnessctl.enable = true;

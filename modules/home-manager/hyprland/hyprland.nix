@@ -98,6 +98,7 @@
 
             input = {
                 kb_layout = "se";
+                kb_options = "caps:swapescape";
 
                 follow_mouse = 1;
 

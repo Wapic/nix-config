@@ -15,12 +15,12 @@
 
         plugins = with pkgs.vimPlugins; [
             fzf-vim
+            chadtree
             coq_nvim
             coq-artifacts
             coq-thirdparty
             lualine-nvim
             onedark-nvim
-            chadtree
             nvim-treesitter
             nvim-lspconfig
             nvim-treesitter-parsers.c

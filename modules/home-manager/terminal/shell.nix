@@ -27,19 +27,13 @@
                 update = "sudo nixos-rebuild switch --flake /home/wapic/nix-config";
                 ssh = "kitten ssh ";
                 wpc = "cd /home/wapic/.local/share/PrismLauncher/instances/SKYBLOCK_OLD/minecraft/config/ChatTriggers/modules/";
+                mv = "mv -v";
             };
-
-            plugins = [
-                {
-                    name = "vi-mode";
-                    src = pkgs.zsh-vi-mode;
-                    file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-                }
-            ];
 
             completionInit = "autoload -Uz compinit; compinit" + "\n" + "zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'";
 
             initExtra = ''
+                bindkey -e
                 autoload -Uz add-zsh-hook
                 autoload -Uz vcs_info
                 add-zsh-hook precmd vcs_info

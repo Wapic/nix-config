@@ -19,6 +19,7 @@
         ./terminal/neovim.nix
         ./terminal/git.nix
         ./terminal/fzf.nix
+        ./terminal/tmux.nix
         ./apps/pavucontrol.nix
         ./apps/mozilla.nix
         ./apps/nautilus.nix

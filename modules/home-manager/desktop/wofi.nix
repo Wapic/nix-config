@@ -42,9 +42,13 @@
                   wl-copy "$RESULT"
                   exit 0
                 else
-                  QALC_RET=$(qalc "$WOFI_RET")
-                  LAST_WOFI=$WOFI_RET
-                  echo "$QALC_RET" >> "$RESULT_FILE"
+                    if [[ "$WOFI_RET" =~ ^C|cL|lE|eA|aR|r$ ]]; then
+                        rm $RESULT_FILE
+                    else
+                      QALC_RET=$(qalc "$WOFI_RET")
+                      LAST_WOFI=$WOFI_RET
+                      echo "$QALC_RET" >> "$RESULT_FILE"
+                    fi
                 fi
               else
                 if [ -n "$LAST_WOFI" ]; then

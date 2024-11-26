@@ -1,4 +1,4 @@
-{pkgs, config, ... }: {
+{ pkgs, config, ... }: {
 
     ############################
     ### theme related config ###
@@ -9,7 +9,7 @@
         name = "wapic";
         author = "wapic";
         palette = {
-            base00 = "12151a"; #Background-Darker
+            base00 = "12151a"; #Background-Darkr
             base01 = "1c2128"; #Background
             base02 = "373e47"; #Background-Bright
             base03 = "545d68"; 
@@ -32,6 +32,7 @@
         packages = with pkgs; [
             lavanda-gtk-theme
             adwaita-icon-theme
+            kdePackages.breeze-icons
             adwaita-qt
         ];
 
@@ -64,8 +65,8 @@
         };
 
         iconTheme = {
-            package = pkgs.adwaita-icon-theme;
-            name = "Adwaita";
+            package = pkgs.kdePackages.breeze-icons;
+            name = "Breeze";
         };
 
         font = {
@@ -158,38 +159,22 @@
 
         wofi.style = ''
             window {
-                border:     1px solid #${config.colorScheme.palette.base0D};
-                background-color:   #${config.colorScheme.palette.base01};
+                border: 1px solid #${config.colorScheme.palette.base0D};
+                background-color: #${config.colorScheme.palette.base01};
+                color: #${config.colorScheme.palette.base0F}
             }
 
-            #input {
-                border: none;
-                background-color: #${config.colorScheme.palette.base00};
-                color: #${config.colorScheme.palette.base0F};
-                margin: 2px 2px 0px;
-                outlne: none;
+            #outer-box {
+                margin: 4px;
             }
 
-            #entry {
-                margin: 0px;
-            }
-
-            #entry:selected {
+            #entry:selected, #input {
                 outline: none;
                 background-color: #${config.colorScheme.palette.base00};
-                margin: 0px 2px 0px 2px;
-                padding-left: 8px;
             }
 
-            #innerbox {
-                margin: -2px;
-            }
-
-            #scroll {
-                padding: 0px 0px 4px 0px;
-            }
-            #text {
-                color: #${config.colorScheme.palette.base0F}
+            #img {
+                padding-right: 4px;
             }
         '';
     };
@@ -197,7 +182,7 @@
     services = {
         dunst.settings = {
             global = {
-                icon_theme = "Adwaita";
+                icon_theme = "Breeze";
                 font = "Fira Code Nerd Font Regular 14";
                 frame_color = "#${config.colorScheme.palette.base0D}";
                 foreground = "#${config.colorScheme.palette.base0F}";

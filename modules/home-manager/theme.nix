@@ -181,7 +181,7 @@ in {
 
         wofi.style = ''
             window {
-                border: 1px solid #${config.colorScheme.palette.base0D};
+                border: 1px solid #${config.colorScheme.palette.base02};
                 background-color: #${config.colorScheme.palette.base01};
                 color: #${config.colorScheme.palette.base0F}
             }
@@ -206,7 +206,7 @@ in {
             global = {
                 icon_theme = "Breeze";
                 font = "Fira Code Nerd Font Regular 14";
-                frame_color = "#${config.colorScheme.palette.base0D}";
+                frame_color = "#${config.colorScheme.palette.base02}";
                 foreground = "#${config.colorScheme.palette.base0F}";
                 background = "#${config.colorScheme.palette.base01}";
             };

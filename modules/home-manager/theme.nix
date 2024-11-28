@@ -1,17 +1,35 @@
-{ pkgs, config, ... }: {
-
+{ pkgs, config, nix-colors, ... }: let 
+    nix-colors-lib = nix-colors.lib.contrib { inherit pkgs; };
+in {
+    
     ############################
     ### theme related config ###
     ############################
+
+    home.file.print-theme = {
+        enable = true;
+        executable = true;
+        target = "scripts/print-colors.sh";
+        text = ''
+            show_color(){
+                for i do
+                    printf '\e]4;%d;%s\a\e[0;48;5;%dm%s\e[m\n' "$#" "$i" "$#" "$i"
+                    shift
+                done
+            }
+
+            show_color "#${config.colorScheme.palette.base00}" "#${config.colorScheme.palette.base01}" "#${config.colorScheme.palette.base02}" "#${config.colorScheme.palette.base03}" "#${config.colorScheme.palette.base04}" "#${config.colorScheme.palette.base05}" "#${config.colorScheme.palette.base06}" "#${config.colorScheme.palette.base07}" "#${config.colorScheme.palette.base08}" "#${config.colorScheme.palette.base09}" "#${config.colorScheme.palette.base0A}" "#${config.colorScheme.palette.base0B}" "#${config.colorScheme.palette.base0C}" "#${config.colorScheme.palette.base0D}" "#${config.colorScheme.palette.base0E}" "#${config.colorScheme.palette.base0F}"
+        '';
+    };
 
     colorScheme = {
         slug = "wapic";
         name = "wapic";
         author = "wapic";
         palette = {
-            base00 = "12151a"; #Background-Darkr
-            base01 = "1c2128"; #Background
-            base02 = "373e47"; #Background-Bright
+            base00 = "011111"; #Background-Dark
+            base01 = "012120"; #Background
+            base02 = "05625E"; #Background-Bright
             base03 = "545d68"; 
             base04 = "768390";
             base05 = "909dab";
@@ -24,7 +42,7 @@
             base0C = "96d0ff"; # light blue
             base0D = "539bf5"; # blue
             base0E = "e275ad"; # pink
-            base0F = "adbac7"; # Foreground
+            base0F = "438279"; # Foreground
         };
     };
 
@@ -78,8 +96,8 @@
     wayland.windowManager.hyprland.settings = {
         env = [ "XCURSOR_SIZE,30" ];
         exec-once = [ "hyprctl setcursor Adwaita 30" ];
-        general."col.active_border" = "0xff${config.colorScheme.palette.base0D}";
-        general."col.inactive_border" = "0xff${config.colorScheme.palette.base01}";
+        general."col.active_border" = "0xff${config.colorScheme.palette.base02}";
+        general."col.inactive_border" = "0xff${config.colorScheme.palette.base03}";
         decoration."col.shadow" = "0xff${config.colorScheme.palette.base01}";
     };
 
@@ -88,6 +106,7 @@
             font.name = "Fira Code Nerd Font Mono";
             font.size = 14;
             settings = {
+                background_opacity = 0.9;
                 background = "#${config.colorScheme.palette.base01}";
                 foreground = "#${config.colorScheme.palette.base0F}";
 
@@ -123,19 +142,22 @@
                 padding: 0 2px;
             }
             #workspaces button.active {
-                color: #${config.colorScheme.palette.base0D};
-            }
-            #workspaces button:hover {
-                color: #${config.colorScheme.palette.base0C};
+                color: #${config.colorScheme.palette.base0F};
             }
             #pulseaudio {
-                color: #${config.colorScheme.palette.base0D};
+                color: #00aaff;
             }
             #battery {
-                color: #${config.colorScheme.palette.base0B};
+                color: #8ebd6b;
             }
             #bluetooth {
-                color: #${config.colorScheme.palette.base07};
+                color: #00ffff;
+            }
+            #network {
+                color: #ffffff;
+            }
+            #clock {
+                color: #ffffff;
             }
 
             #network,

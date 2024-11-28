@@ -16,6 +16,10 @@
                 Rank.BandModifier2_4GHz = 0.1;
             };  
         };
-        environment.systemPackages = [ pkgs.iwgtk ];
+        environment.systemPackages = [ 
+            pkgs.iwgtk
+            pkgs.wireless-regdb
+            pkgs.iw
+        ];
     };
 }

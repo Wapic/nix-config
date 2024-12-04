@@ -128,7 +128,7 @@
                 };
                 format = "{icon} {capacity}%";
                 tooltip-format = "Max Capacity: {health}%\n{timeTo}";
-                format-chargin = "{icon}󱐋 {capacity}%";
+                format-charging = "{icon}󱐋 {capacity}%";
                 format-icons = [
                     "󰁺"
                     "󰁻"

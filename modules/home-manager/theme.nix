@@ -84,7 +84,7 @@ in {
 
         iconTheme = {
             package = pkgs.kdePackages.breeze-icons;
-            name = "Breeze";
+            name = "breeze-dark";
         };
 
         font = {
@@ -204,7 +204,7 @@ in {
     services = {
         dunst.settings = {
             global = {
-                icon_theme = "Breeze";
+                icon_theme = "breeze-dark";
                 font = "Fira Code Nerd Font Regular 14";
                 frame_color = "#${config.colorScheme.palette.base02}";
                 foreground = "#${config.colorScheme.palette.base0F}";

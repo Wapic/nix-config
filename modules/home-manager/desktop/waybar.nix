@@ -108,13 +108,13 @@
                 format-bluetooth = "󰂰  {volume:2}%";
                 format-muted = "  MUTED";
                 format-icons = {
-                    headphones = "";
+                    headset = "";
                     default = [
                         ""
                         ""
                     ];
                 };
-                scroll-step = 5;
+                scroll-step = 1;
                 on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
                 on-click-right = "pavucontrol";
             };

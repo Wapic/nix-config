@@ -11,4 +11,10 @@
     environment.systemPackages = with pkgs; [
         pulseaudio # allow for pactl command for compatibility
     ];
+
+    services.xserver.xkb = {
+            layout = "se";
+            model = "pc104";
+            options = "caps:swapescape";
+    };
 }

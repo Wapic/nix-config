@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }: {
     options = {
-        programs.vesktop = {
+        programs.discord = {
             enable = lib.mkOption {
                 default = true;
                 type = lib.types.bool;
@@ -8,7 +8,7 @@
         };
     };
 
-    config = lib.mkIf config.programs.vesktop.enable {
-        home.packages = [ pkgs.vesktop ];
+    config = lib.mkIf config.programs.discord.enable {
+        home.packages = [ pkgs.discord-canary ];
     };
 }

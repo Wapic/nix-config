@@ -98,7 +98,11 @@ in {
         exec-once = [ "hyprctl setcursor Adwaita 30" ];
         general."col.active_border" = "0xff${config.colorScheme.palette.base02}";
         general."col.inactive_border" = "0xff${config.colorScheme.palette.base03}";
-        decoration."col.shadow" = "0xff${config.colorScheme.palette.base01}";
+        decoration = {
+            shadow = {
+                color = "0xff${config.colorScheme.palette.base01}";
+            };
+        };
     };
 
     programs = {

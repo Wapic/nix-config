@@ -3,11 +3,9 @@
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-emoji
-        fira-code-nerdfont
-        fira-code-symbols
-        fira-code
-        hack-font
+        nerd-fonts.fira-mono
+        nerd-fonts.fira-code
+        nerd-fonts.hack
         cantarell-fonts
-        (nerdfonts.override { fonts = [ "FiraCode" "Hack" ]; })
     ];
 }
